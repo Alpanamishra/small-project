@@ -1,0 +1,44 @@
+<!-- templates/index.html -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Management</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Dev Bhoomi Uttrakhand University (student record)</h1>
+        <form method="POST" action="/add_student">
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" class="form-control" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="roll_number">Roll Number</label>
+                <input type="text" class="form-control" id="roll_number" name="roll_number" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Add Student</button>
+        </form>
+        <h2>Student List</h2>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Roll Number</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    {% for student in students %}
+                    <tr>
+                        <td>{{ student['name'] }}</td>
+                        <td>{{ student['roll_number'] }}</td>
+                    </tr>
+                    {% endfor %}
+                </tr>
+            </tbody>    
+        </table>
+    </div>
+</body>
+</html>

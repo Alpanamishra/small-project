@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+
+<head>
+  <title>AngularJS Example</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+</head>
+
+<body ng-controller="myController">
+
+  <h2>AngularJS Greeting App</h2   z>
+
+  <label for="nameInput">Enter your name:</label>
+  <input type="text" id="nameInput" ng-model="name" placeholder="Your Name">
+
+  <p ng-if="name">Hello, {{name}}!</p>
+
+  <script>
+    var app = angular.module('myApp', []);
+
+    app.controller('myController', function($scope) {
+      // Initialize the 'name' variable in the scope
+      $scope.name = "";
+
+      // You can define other functions or properties here as needed
+
+    });
+  </script>
+
+</body>
+</html>
